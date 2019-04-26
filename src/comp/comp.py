@@ -52,12 +52,16 @@ print(c)
 # Write a list comprehension that creates a list of all the ages plus 10.
 print("Ages plus 10:")
 d = []
+for i in humans:
+    d.append(i.age + 10)
 print(d)
 
 # Write a list comprehension that creates a list of strings which are the name
 # joined to the age with a hyphen, for example "David-31", for all humans.
 print("Name hyphen age:")
 e = []
+for i in humans:
+    e.append(f'{i.name}-{i.age}')
 print(e)
 
 # Write a list comprehension that creates a list of tuples containing name and
@@ -65,6 +69,9 @@ print(e)
 # inclusive.
 print("Names and ages between 27 and 32:")
 f = []
+for i in humans:
+    if i.age >= 27 and i.age <= 32:
+        f.append((i.name, i.age))
 print(f)
 
 # Write a list comprehension that creates a list of new Humans like the old
@@ -72,9 +79,13 @@ print(f)
 # The "humans" list should be unmodified.
 print("All names capitalized:")
 g = []
+for i in humans:
+    g.append(Human(i.name.upper(), i.age + 5))
 print(g)
 
 # Write a list comprehension that contains the square root of all the ages.
 print("Square root of ages:")
 h = []
+for i in humans:
+    h.append(i.age**0.5)
 print(h)
